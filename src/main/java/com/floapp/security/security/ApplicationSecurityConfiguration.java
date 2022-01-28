@@ -42,7 +42,8 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .antMatchers("/api/**").hasRole(STUDENT.name())
                 .anyRequest()
                 .authenticated()
-                .and().httpBasic();
+                .and()
+                .formLogin();
 
     }
     @Override
